@@ -1,22 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <task v-if="false"></task>
+    <task-list v-if="false"></task-list>
+    <InboxScreen></InboxScreen>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import store from './store';
+import TaskList from "./components/TaskList";
+import Task from "./components/Task";
+import InboxScreen from "./components/InboxScreen";
 
 export default {
   name: "App",
+  store,
   components: {
-    HelloWorld
+    InboxScreen,
+    Task,
+    TaskList,
   }
 };
 </script>
 
 <style>
+@import url(./index.css);
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
